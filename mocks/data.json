@@ -1,0 +1,91 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "jaro",
+      "price": "16000000"
+    },
+    {
+      "id": 2,
+      "name": "pofak",
+      "price": "10000"
+    },
+    {
+      "name": "key",
+      "price": "3000000",
+      "id": 3
+    }
+  ],
+  "factors": [
+    {
+      "id": 1,
+      "submitDate": "۱۴۰۰/۴/۲۱",
+      "customerName": "test222",
+      "description": "test",
+      "total": 48000000,
+      "totalDiscount": 6600000,
+      "payable": 41400000,
+      "records": [
+        {
+          "productId": 1,
+          "productName": "jaro",
+          "count": "2",
+          "discount": "10",
+          "unitPriceWithDiscount": 13500000,
+          "unitPriceWithoutDiscount": 15000000,
+          "totalPriceWithDiscount": 27000000,
+          "totalPriceWithoutDiscount": 30000000,
+          "unitPriceBenefit": 1500000,
+          "totalPriceBenefit": 3000000
+        },
+        {
+          "productId": 3,
+          "productName": "key",
+          "count": "6",
+          "discount": "20",
+          "unitPriceWithDiscount": 2400000,
+          "unitPriceWithoutDiscount": 3000000,
+          "totalPriceWithDiscount": 14400000,
+          "totalPriceWithoutDiscount": 18000000,
+          "unitPriceBenefit": 600000,
+          "totalPriceBenefit": 3600000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "submitDate": "۱۴۰۰/۴/۲۲",
+      "customerName": "سسس",
+      "description": "ثقل صثقل لل",
+      "total": 1599000000,
+      "totalDiscount": 31980000,
+      "payable": 1567020000,
+      "records": [
+        {
+          "productId": 1,
+          "productName": "jaro",
+          "count": "99",
+          "discount": "2",
+          "unitPriceWithDiscount": 15680000,
+          "unitPriceWithoutDiscount": 16000000,
+          "totalPriceWithDiscount": 1552320000,
+          "totalPriceWithoutDiscount": 1584000000,
+          "unitPriceBenefit": 320000,
+          "totalPriceBenefit": 31680000
+        },
+        {
+          "productId": 3,
+          "productName": "key",
+          "count": "5",
+          "discount": "2",
+          "unitPriceWithDiscount": 2940000,
+          "unitPriceWithoutDiscount": 3000000,
+          "totalPriceWithDiscount": 14700000,
+          "totalPriceWithoutDiscount": 15000000,
+          "unitPriceBenefit": 60000,
+          "totalPriceBenefit": 300000
+        }
+      ]
+    }
+  ]
+}

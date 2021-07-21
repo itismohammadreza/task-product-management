@@ -1,0 +1,12 @@
+<label>{{ label }}</label>
+<input
+  pInputText
+  [pKeyFilter]="keyFilter"
+  [(ngModel)]="value"
+  [disabled]="disabled"
+  [readonly]="readonly"
+  class="p-inputtext-sm"
+  (blur)="_onBlur()"
+  (change)="_onChange($event)"
+  (input)="_onInput($event)"
+/>

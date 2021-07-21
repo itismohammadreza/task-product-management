@@ -1,0 +1,38 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h2>Products</h2>
+      <ng-button label="Add Product" (click)="onAddBtnClick()"></ng-button>
+    </div>
+    <div class="col-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <th>{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <th>
+            <div class="actions">
+              <ng-button class="mr-2" color="primary" label="Edit" (click)="onEditBtnClick(product)"></ng-button>
+              <ng-button color="danger" label="Delete" (click)="onDeleteBtnClick(product)"></ng-button>
+            </div>
+          </th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<p-dialog (onHide)="onCloseDialog()" header="Add Form Item" [style]="{width: '25vw'}" [(visible)]="showDialog" [modal]="true">
+  <ng-product-form [product]="selectedProduct" (onSubmit)="onSubmitDialog($event)"></ng-product-form>
+</p-dialog>

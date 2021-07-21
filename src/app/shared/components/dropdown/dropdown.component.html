@@ -1,0 +1,13 @@
+<label>{{ label }}</label>
+<p-dropdown
+  styleClass="p-inputtext-sm"
+  [options]="options"
+  [optionLabel]="optionLabel"
+  [optionValue]="optionValue"
+  [(ngModel)]="value"
+  [disabled]="disabled"
+  placeholder="Choose"
+  [autoDisplayFirst]="false"
+  (onBlur)="_onBlur()"
+  (onChange)="_onChange($event)"
+></p-dropdown>

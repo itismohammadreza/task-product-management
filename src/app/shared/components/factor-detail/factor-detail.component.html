@@ -1,0 +1,60 @@
+<table *ngIf="factor">
+  <tr class="tl">
+    <td>Customer Name: {{factor.customerName}}</td>
+    <td colspan="9">
+      <p>Submit Date : {{factor.submitDate}}</p>
+      <p>Factor No. : {{factor.id}}</p>
+    </td>
+  </tr>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Count</th>
+    <th>
+      Unit Price
+      <p>(Without Discount)</p>
+    </th>
+    <th>Discount</th>
+    <th>
+      Unit Price
+      <p>(With Discount)</p>
+    </th>
+    <th>
+      Total
+      <p>(Without Discount)</p>
+    </th>
+    <th>
+      Total
+      <p>(With Discount)</p>
+    </th>
+    <th>Unit Price Benefit</th>
+    <th>Total Price Benefit</th>
+  </tr>
+  <tr *ngFor="let factor of factor.records">
+    <td>{{factor.productId}}</td>
+    <td>{{factor.productName}}</td>
+    <td>{{factor.count}}</td>
+    <td>{{factor.unitPriceWithoutDiscount}}</td>
+    <td>{{factor.discount}}</td>
+    <td>{{factor.unitPriceWithDiscount}}</td>
+    <td>{{factor.totalPriceWithoutDiscount}}</td>
+    <td>{{factor.totalPriceWithDiscount}}</td>
+    <td>{{factor.unitPriceBenefit}}</td>
+    <td>{{factor.totalPriceBenefit}}</td>
+  </tr>
+  <tr>
+    <td rowspan="3" colspan="8" class="tl">
+      Description: {{factor.description}}
+    </td>
+    <td>Total</td>
+    <td>{{factor.total}}</td>
+  </tr>
+  <tr>
+    <td>Total Discount</td>
+    <td>{{factor.totalDiscount}}</td>
+  </tr>
+  <tr>
+    <td>Payable</td>
+    <td>{{factor.payable}}</td>
+  </tr>
+</table>

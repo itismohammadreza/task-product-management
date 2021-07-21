@@ -1,0 +1,5 @@
+<form class="form-row" [formGroup]="form" (ngSubmit)="submit()">
+  <ng-input-text label="Name" class="col-12 mb-4" formControlName="name"></ng-input-text>
+  <ng-input-text label="Price" class="col-12 mb-4" formControlName="price"></ng-input-text>
+  <ng-button class="col-12 mb-4" [disabled]="form.invalid" type="submit" label="Submit"></ng-button>
+</form>

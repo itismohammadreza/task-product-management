@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-12 d-flex justify-content-between">
+      <h2>Factor Modify</h2>
+      <ng-button label="Save" (click)="onSaveBtnClick()"></ng-button>
+    </div>
+  </div>
+  <form class="form-row" [formGroup]="form">
+    <ng-input-text label="Customer Name" class="col-md-3 col-lg" formControlName="customerName"></ng-input-text>
+    <ng-input-text label="Description" class="col-md-3 col-lg" formControlName="description"></ng-input-text>
+    <ng-button class="col-md-9 col-lg align-self-end text-right"
+               label="Add Record"
+               (click)="addNewRecordGroup()">
+    </ng-button>
+
+    <hr class="col-12">
+
+    <div class="col-12 record border border-secondary rounded p-4 my-4 bg-light"
+         *ngFor="let recordGroup of form.controls['records']['controls'];let i = index"
+         [formGroup]="recordGroup">
+      <div class="row">
+        <ng-dropdown [options]="products"
+                     optionLabel="name"
+                     optionValue="id"
+                     label="Name"
+                     class="col-md-3"
+                     formControlName="productId">
+        </ng-dropdown>
+        <ng-input-text keyFilter="int" label="Count" class="col-md-3" formControlName="count"></ng-input-text>
+        <ng-input-text keyFilter="int" label="Discount" class="col-md-3" formControlName="discount">
+        </ng-input-text>
+        <ng-button (click)="deleteRecordGroup(i)" label="Remove Item" color="danger"
+                   class="col-md-3 text-right mt-4">
+        </ng-button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,42 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h2>Factors</h2>
+      <ng-button label="Add Factor" routerLink="/factors/modify"></ng-button>
+    </div>
+    <div class="col-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Submit Date</th>
+          <th>Customer Name</th>
+          <th>Total</th>
+          <th>Payable</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let factor of factors">
+          <th>{{factor.id}}</th>
+          <th>{{factor.submitDate}}</th>
+          <td>{{factor.customerName}}</td>
+          <td>{{factor.total}}</td>
+          <td>{{factor.payable}}</td>
+          <th>
+            <div class="actions">
+              <ng-button class="mr-2" color="primary" label="Edit"
+                         [routerLink]="['/factors/modify',factor.id]"></ng-button>
+              <ng-button class="mr-2" color="danger" label="Delete" (click)="onDeleteBtnClick(factor)"></ng-button>
+              <ng-button color="success" label="Details" (click)="onShowDetailBtnClick(factor)"></ng-button>
+            </div>
+          </th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p-dialog [header]="selectedFactor?.customerName" [style]="{width: '80vw'}" [(visible)]="showDialog" [modal]="true">
+  <ng-factor-detail [factor]="selectedFactor"></ng-factor-detail>
+</p-dialog>
